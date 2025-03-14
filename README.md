@@ -1,42 +1,42 @@
 # BRAS 配置指南（支持 RAAS 代理与代理代拨）
 
 ## 目录
-- [1. BRAS 概述](#1-bras-概述)
-- [2. RAAS 功能](#2-raas-功能)
-  - [2.1 RAAS 代理](#21-raas-代理)
-  - [2.2 RAAS 代理代拨](#22-raas-代理代拨)
-- [3. 逻辑拓扑](#3-逻辑拓扑)
-- [4. 配置说明](#4-配置说明)
-  - [4.1 RAAS 代理配置](#41-raas-代理配置)
-  - [4.2 RAAS 代理代拨配置](#42-raas-代理代拨配置)
-- [5. 相关命令与管理](#5-相关命令与管理)
-- [6. 常见问题 FAQ](#6-常见问题-faq)
+- [BRAS 概述](#bras-概述)
+- [RAAS 功能](#raas-功能)
+  - [RAAS 代理](#raas-代理)
+  - [RAAS 代理代拨](#raas-代理代拨)
+- [逻辑拓扑](#逻辑拓扑)
+- [配置说明](#配置说明)
+  - [RAAS 代理配置](#raas-代理配置)
+  - [RAAS 代理代拨配置](#raas-代理代拨配置)
+- [相关命令与管理](#相关命令与管理)
+- [常见问题 FAQ](#常见问题-faq)
 
 ---
 
-## 1. BRAS 概述
+## BRAS 概述
 
 **BRAS（Broadband Remote Access Server，宽带远程访问服务器）**，主要用于 **PPPoE 拨号、VPN 认证、用户管理、流量控制**。在 ISP（互联网服务提供商）架构中，BRAS 负责接入认证，并可以 **通过 RAAS 代理** 进行 **身份认证与计费**。
 
 ---
 
-## 2. RAAS 功能
+## RAAS 功能
 
 RAAS（RADIUS Authentication and Accounting Server）提供代理认证、代理代拨、负载均衡等功能。
 
-### 2.1 RAAS 代理
+### RAAS 代理
 **应用场景**
-1. **外包拨号/VPN 认证**：RAAS 代理 RADIUS 认证，保护 RADIUS 服务器不暴露公网。
-2. **大规模 RADIUS 代理**：RAAS 代理多个 RADIUS 服务器，提高负载均衡能力。
+**外包拨号/VPN 认证**：RAAS 代理 RADIUS 认证，保护 RADIUS 服务器不暴露公网。
+**大规模 RADIUS 代理**：RAAS 代理多个 RADIUS 服务器，提高负载均衡能力。
 
-### 2.2 RAAS 代理代拨
+### RAAS 代理代拨
 **应用场景**
-1. **Wi-Fi 热点、企业 VPN 认证**。
-2. **自动注册并动态绑定拨号信息**，降低运维成本。
+**Wi-Fi 热点、企业 VPN 认证**。
+**自动注册并动态绑定拨号信息**，降低运维成本。
 
 ---
 
-## 3. 逻辑拓扑
+## 逻辑拓扑
 
 ```
 +-----------+        +-------------+        +-----------------+
@@ -50,16 +50,16 @@ RAAS（RADIUS Authentication and Accounting Server）提供代理认证、代理
 ```
 
 **数据流**
-1. 终端用户（PPPoE/VPN）拨号 → BRAS 设备
-2. BRAS 设备将 **认证请求** 发送至 **RAAS**
-3. RAAS 代理 **解析用户名**，转发给 **RADIUS 服务器**
-4. 认证通过后，用户成功接入
+终端用户（PPPoE/VPN）拨号 → BRAS 设备
+BRAS 设备将 **认证请求** 发送至 **RAAS**
+RAAS 代理 **解析用户名**，转发给 **RADIUS 服务器**
+认证通过后，用户成功接入
 
 ---
 
-## 4. 配置说明
+## 配置说明
 
-### 4.1 RAAS 代理配置
+### RAAS 代理配置
 
 #### ① 创建项目
 - 进入 **【当前项目】 > 【项目列表】**
@@ -86,7 +86,7 @@ radius-server add name=isp1 address=192.168.1.10 secret=123456
 
 ---
 
-### 4.2 RAAS 代理代拨配置
+### RAAS 代理代拨配置
 
 #### ① 启用 RAAS 代理
 - 参考 **[RAAS 代理配置](#41-raas-代理配置)**
@@ -108,9 +108,9 @@ pppoe proxy-auth-server 192.168.1.20 secret=raas123
 
 ---
 
-## 5. 相关命令与管理
+## 相关命令与管理
 
-### 5.1 BRAS 设备管理
+### BRAS 设备管理
 
 ```sh
 # 查看当前 RADIUS 服务器状态
@@ -123,7 +123,7 @@ test radius server 192.168.1.10 user=test password=123456
 show pppoe log
 ```
 
-### 5.2 RAAS 设备管理
+### RAAS 设备管理
 
 ```sh
 # 查看代理状态
@@ -138,15 +138,15 @@ raasctl show stats
 
 ---
 
-## 6. 常见问题 FAQ
+## 常见问题 FAQ
 
 ### **Q1：RAAS 代理请求失败，BRAS 认证不通过？**
 **解决方案：**
-1. **检查 RAAS 配置**  
+**检查 RAAS 配置**  
    ```sh
    raasctl show config
    ```
-2. **检查 RADIUS 服务器连接**  
+**检查 RADIUS 服务器连接**  
    ```sh
    ping 192.168.1.10
    ```
