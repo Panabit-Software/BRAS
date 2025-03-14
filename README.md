@@ -167,7 +167,7 @@ raasctl enable debug
 
 ---
 
-## 7. 相关链接
+## 相关链接
 - [PPPoE 认证配置指南](#)
 - [RADIUS 服务器对接](#)
 - [Panabit 官方文档](https://www.panabit.com/)
