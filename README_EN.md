@@ -110,7 +110,6 @@ The logical topology shows how devices communicate via RAAS Proxy and Proxy Dial
 ## Related Links
 🔗 Official Website: [www.panabit.com](https://www.panabit.com/)  
 🔗 Forum: [bbs.panabit.com](https://bbs.panabit.com/)  
-
 📧 Technical Support: support@panabit.com
 
 📞 Contact us for more detailed solutions!
