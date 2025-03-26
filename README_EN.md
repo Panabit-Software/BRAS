@@ -47,7 +47,7 @@ RAAS Proxy Dialing allows a proxy server to initiate dialing requests on behalf 
 ## 🌐 Logical Topology
 The logical topology shows how devices communicate via RAAS Proxy and Proxy Dialing in a BRAS deployment.
 
-![Topology](assets/topology_p.png)
+![Topology](assets/topology_p_EN.png)
 ---
 
 ## Configuration Instructions
