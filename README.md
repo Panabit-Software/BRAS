@@ -7,7 +7,7 @@
 <h4 align="center">Integrated Outbound Intelligent Application Gateway</h4>
 
 <p align="center">
-  <a href="README.md" style="color: #007bff; text-decoration: none; font-weight: bold;">中文</a> | <span style="color: #007bff; font-weight: bold;">English</span>
+  <a href="README_CN.md" style="color: #007bff; text-decoration: none; font-weight: bold;">中文</a> | <span style="color: #007bff; font-weight: bold;">English</span>
 </p>
 
 ---
