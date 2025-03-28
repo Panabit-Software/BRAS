@@ -12,7 +12,7 @@
 
 ---
 
-# BRAS 使用（支持pppoe代理与代拨）
+# BRAS 方案（支持pppoe代理与代拨）
 
 ## 📌 目录
 - 📖 [BRAS 概述](#brass-概述)
