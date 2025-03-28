@@ -12,7 +12,7 @@
 
 ---
 
-# BRAS Usage (Supports RAAS Proxy & Proxy Dialing)
+# BRAS Solution (Supports RAAS Proxy & Proxy Dialing)
 
 ## 📌 Table of Contents
 - 📖 [BRAS Overview](#bras-overview)
@@ -35,7 +35,8 @@ RAAS Proxy lets BRAS act as a proxy during connections to perform remote authent
 
 ### Use Cases
 - **Outsourced Dialing/VPN Authentication**: Uses the RADIUS protocol to authenticate, shielding the RADIUS server from direct public exposure for enhanced security.
-- **Large-Scale RADIUS Proxy**: Manages multiple RADIUS servers to improve load balancing and efficiently handle authentication for large user bases.
+- **Large-Scale RADIUS Proxy
+**: Manages multiple RADIUS servers to improve load balancing and efficiently handle authentication for large user bases.
 
 ## 🔄 RAAS Proxy Dialing
 RAAS Proxy Dialing allows a proxy server to initiate dialing requests on behalf of users, enabling network access. This is ideal for scenarios like Wi-Fi hotspots and enterprise VPNs, reducing operational costs.
